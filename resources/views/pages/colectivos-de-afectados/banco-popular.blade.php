@@ -1,0 +1,10 @@
+@php
+$caso = json_decode('{"id": "banco_popular", "title": "Banco Popular", "subtitle": "Únase a la plataforma de ADICAE para recuperar los ahorros perdidos por la venta del Banco Popular al Banco Santander.", "hero": "assets/adicae/BANNER-popular-2021.jpg", "email": "bancopopular@adicae.net", "info": "La inscripción a la plataforma Banco Popular le permite recibir información del caso y conocer las actuaciones de ADICAE para los afectados por la resolución y venta del Banco Popular.", "news": [{"title": "ADICAE mantiene activa la defensa de los afectados por Banco Popular", "text": "La asociación continúa informando a los consumidores afectados sobre las vías de reclamación y la evolución de los procedimientos.", "date": "12/09/2025"}, {"title": "Banco Popular: información para accionistas y bonistas", "text": "ADICAE recuerda la importancia de conservar la documentación de compra, comunicaciones bancarias y extractos.", "date": "20/06/2025"}, {"title": "La plataforma de afectados sigue abierta", "text": "Los consumidores pueden inscribirse para recibir información y asesoramiento sobre el caso.", "date": "15/03/2025"}], "documents": [{"title": "Boletín de inscripción socio titular", "url": "https://www.adicae.es/wp-content/uploads/2025/09/INSCRIPCION-FWU.pdf"}, {"title": "Información afectados Banco Popular", "url": "#"}, {"title": "Modelo de recopilación de documentación", "url": "#"}], "faqs": [{"q": "¿Quién puede incorporarse a la plataforma?", "a": "<p>Accionistas, bonistas y consumidores que hubieran perdido sus ahorros como consecuencia de la resolución y venta del Banco Popular.</p>"}, {"q": "¿Qué documentación debo guardar?", "a": "<ul><li>Contratos y órdenes de compra.</li><li>Extractos de valores.</li><li>Comunicaciones de la entidad.</li><li>DNI y datos de contacto actualizados.</li></ul>"}, {"q": "¿Qué hace ADICAE?", "a": "<p>ADICAE informa, agrupa a los afectados y estudia las vías de reclamación más adecuadas para cada caso.</p>"}]}', true);
+@endphp
+@extends('layouts.app')
+
+@section('title', $caso['title'] . ' - ADICAE')
+
+@section('content')
+    @include('partials.casos.caso-template', ['caso' => $caso])
+@endsection

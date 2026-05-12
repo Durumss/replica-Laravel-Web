@@ -1,0 +1,6354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+/* ==========================================================
+   01. VARIABLES Y BASE
+========================================================== */
+
+:root {
+    --purple: #93007c;
+    --purple-alt: #8a007d;
+    --purple-dark: #780067;
+    --yellow: #f4c400;
+    --yellow-alt: #ffbd00;
+    --dark: #10233f;
+    --dark-blue: #10203b;
+    --green-dark: #2c4b48;
+    --white: #ffffff;
+    --light: #f7f7f7;
+    --muted: #687280;
+
+    --container: 1480px;
+    --radius: 8px;
+    --section-padding: 72px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--dark);
+    background: #fff;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+.container {
+    width: min(var(--container), calc(100% - 80px));
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   02. BOTONES GENERALES
+========================================================== */
+
+.btn-purple,
+.hero-floating-btn,
+.hero-alert-btn,
+.footer-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    background: var(--purple);
+    color: #fff;
+    font-size: 15.5px;
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-purple:hover,
+.hero-floating-btn:hover,
+.hero-alert-btn:hover,
+.footer-btn:hover {
+    background: var(--purple-dark);
+    color: #fff;
+}
+
+.btn-outline,
+.case-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 12px 24px;
+    border: 2px solid var(--purple);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--dark);
+    font-size: 15.5px;
+    font-weight: 800;
+    line-height: 1.15;
+    text-align: center;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline:hover,
+.case-btn:hover {
+    background: var(--purple);
+    color: #fff;
+}
+
+/* ==========================================================
+   03. HEADER
+========================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.header-top {
+    height: 49px;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
+}
+
+.header-top-inner {
+    width: 100%;
+    padding: 0 34px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-btn {
+    height: 39px;
+    padding: 0 24px;
+    border-radius: var(--radius);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.top-btn-outline {
+    border: 2px solid var(--purple);
+    color: var(--dark);
+    background: #fff;
+}
+
+.top-btn-outline:hover {
+    background: var(--purple);
+    color: #fff;
+}
+
+.top-btn-solid {
+    border: 2px solid var(--purple);
+    background: var(--purple);
+    color: #fff;
+}
+
+.top-btn-solid:hover {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+}
+
+.header-socials {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.header-socials a,
+.header-socials button {
+    color: var(--purple);
+    font-size: 17px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.header-socials a:hover,
+.header-socials button:hover {
+    opacity: 0.75;
+}
+
+.header-main {
+    background: #fff;
+}
+
+.header-inner {
+    width: 100%;
+    height: 112px;
+    padding: 0 34px 0 36px;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    flex: 0 0 250px;
+}
+
+.header-logo img {
+    width: 205px;
+    display: block;
+}
+
+.main-nav {
+    flex: 1;
+    height: 100%;
+    margin-left: 28px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 42px;
+}
+
+.main-nav > a,
+.main-nav .nav-link {
+    height: 100%;
+    padding-top: 2px;
+    color: var(--dark);
+    font-size: 13px;
+    line-height: 1.1;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-nav a strong,
+.main-nav .nav-link strong {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 800;
+}
+
+.main-nav a span,
+.main-nav .nav-link span {
+    display: block;
+    color: var(--muted);
+    font-size: 9.3px;
+    font-weight: 600;
+}
+
+.main-nav a.active strong {
+    color: var(--purple);
+}
+
+.nav-item {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 12px);
+    width: 335px;
+    background: #fff;
+    border-top: 5px solid var(--purple);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+    padding: 16px 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s ease;
+}
+
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 16px 24px;
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: left;
+    white-space: normal;
+}
+
+.dropdown-menu a:hover {
+    background: #f5f5f5;
+    color: var(--purple);
+}
+
+/* ==========================================================
+   04. BUSCADOR OVERLAY
+========================================================== */
+
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 15, 15, 0.92);
+}
+
+.search-overlay.is-open {
+    display: flex;
+}
+
+.search-close {
+    position: absolute;
+    top: 52px;
+    right: 58px;
+    background: none;
+    border: 0;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.search-box {
+    width: min(850px, calc(100% - 40px));
+    text-align: center;
+    color: #fff;
+}
+
+.search-box p {
+    margin: 0 0 48px;
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #fff;
+}
+
+.search-form input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-size: 34px;
+    padding: 14px 18px;
+}
+
+.search-form input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.search-form button {
+    background: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 30px;
+    padding: 14px 18px;
+    cursor: pointer;
+}
+
+/* ==========================================================
+   05. SECCIONES GENERALES
+========================================================== */
+
+.section {
+    padding: var(--section-padding) 0;
+}
+
+.section h2,
+.cases-section h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 33px;
+    line-height: 1.18;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.section-line {
+    width: 42px;
+    height: 7px;
+    background: var(--purple);
+    margin: 28px 0;
+}
+
+.section-line.yellow {
+    background: var(--yellow);
+}
+
+.section-intro,
+.section p {
+    max-width: 1500px;
+    color: var(--dark);
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+.section-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* ==========================================================
+   06. HOME - HERO
+========================================================== */
+
+.hero-section,
+.hero-swiper {
+    position: relative;
+}
+
+.hero-swiper {
+    overflow: hidden;
+}
+
+.hero-slide {
+    height: 570px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+.hero-content-purple {
+    position: absolute;
+    top: 78px;
+    left: 17%;
+    display: flex;
+    align-items: center;
+    background: var(--purple);
+}
+
+.hero-content-purple h1 {
+    margin: 0;
+    padding: 18px 28px;
+    color: #fff;
+    font-size: 31px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero-news-btn {
+    min-height: 54px;
+    margin-right: 20px;
+    padding: 18px 26px;
+    background: #fff;
+    color: var(--dark);
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+}
+
+.hero-buttons {
+    position: absolute;
+    bottom: 82px;
+    left: 66%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.hero-box-light {
+    position: absolute;
+    top: 70px;
+    left: 16%;
+    width: 645px;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 24px 28px 32px;
+}
+
+.hero-box-light h1 {
+    margin: 0 0 24px;
+    color: var(--dark);
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.hero-box-light p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.hero-floating-btn {
+    position: absolute;
+    bottom: 85px;
+    left: 16.5%;
+}
+
+.hero-slide-sentencia {
+    height: 545px;
+    background-position: center center;
+}
+
+.hero-alert-box {
+    position: absolute;
+    top: 78px;
+    left: 9.5%;
+    width: 650px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 16px 16px 18px;
+}
+
+.hero-alert-box h1 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 29px;
+    line-height: 1.28;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.hero-alert-btn {
+    position: absolute;
+    left: 10%;
+    bottom: 72px;
+}
+
+/* Flechas Swiper compartidas */
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next,
+.webs-bottom-prev,
+.webs-bottom-next {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background: var(--purple);
+    color: #fff !important;
+    z-index: 100;
+}
+
+.hero-swiper .swiper-button-prev,
+.hero-swiper .swiper-button-next {
+    width: 54px;
+    height: 54px;
+}
+
+.webs-bottom-prev,
+.webs-bottom-next {
+    width: 48px;
+    height: 48px;
+    z-index: 40;
+}
+
+.hero-swiper .swiper-button-prev,
+.webs-bottom-prev {
+    left: 0;
+}
+
+.hero-swiper .swiper-button-next,
+.webs-bottom-next {
+    right: 0;
+}
+
+.hero-swiper .swiper-button-prev::after,
+.hero-swiper .swiper-button-next::after {
+    color: #fff !important;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.webs-bottom-prev::after,
+.webs-bottom-next::after {
+    color: #fff !important;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+/* ==========================================================
+   07. HOME - WEBS DE ADICAE
+========================================================== */
+
+.webs-section {
+    background: #fff;
+}
+
+.webs-section .section-intro {
+    margin-bottom: 58px;
+}
+
+.webs-top-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.webs-bottom-carousel-wrap {
+    position: relative;
+}
+
+.webs-bottom-swiper {
+    overflow: hidden;
+}
+
+.webs-bottom-swiper .swiper-slide {
+    height: auto;
+}
+
+.web-card {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+}
+
+.web-card img {
+    width: 100%;
+    height: 238px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.web-card:hover img {
+    transform: scale(1.04);
+}
+
+/* ==========================================================
+   08. HOME - CASOS COLECTIVOS
+========================================================== */
+
+.cases-section {
+    position: relative;
+    background-image:
+        linear-gradient(rgba(36, 69, 66, 0.74), rgba(36, 69, 66, 0.74)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
+    overflow: hidden;
+}
+
+.cases-overlay {
+    position: relative;
+    z-index: 2;
+    padding: 70px 0 90px;
+}
+
+.cases-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.cases-header h2 {
+    color: #fff;
+}
+
+.cases-carousel-wrap {
+    position: relative;
+    padding: 0 70px;
+}
+
+.cases-swiper {
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+.cases-swiper .swiper-wrapper {
+    align-items: stretch;
+}
+
+.cases-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.case-card {
+    background: #fff;
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-height: 570px;
+}
+
+.case-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.case-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.case-content h3 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.case-line {
+    width: 32px;
+    height: 4px;
+    background: var(--purple);
+    margin: 18px 0;
+}
+
+.case-content p {
+    margin: 0 0 20px;
+    font-size: 16.5px;
+    line-height: 1.55;
+}
+
+.case-btn {
+    margin-top: auto;
+}
+
+.cases-prev,
+.cases-next {
+    color: #fff !important;
+    z-index: 50;
+    width: 46px;
+    height: 46px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.cases-prev {
+    left: 0;
+}
+
+.cases-next {
+    right: 0;
+}
+
+.cases-prev::after,
+.cases-next::after {
+    color: #fff !important;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.cases-swiper .swiper-pagination {
+    bottom: 18px;
+}
+
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.55;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* ==========================================================
+   09. HOME - PUBLICACIONES Y VÍDEOS
+========================================================== */
+
+.publications-grid,
+.video-grid {
+    display: grid;
+    gap: 24px;
+}
+
+.publications-grid {
+    grid-template-columns: repeat(6, 1fr);
+    align-items: end;
+    margin-top: 35px;
+}
+
+.video-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.publication-card {
+    text-align: center;
+}
+
+.publication-card img {
+    width: 100%;
+    height: 245px;
+    object-fit: contain;
+    transition: transform 0.25s ease;
+}
+
+.publication-card:hover img {
+    transform: scale(1.06);
+}
+
+.publication-card h3 {
+    margin: 12px 0 0;
+    font-size: 16.5px;
+    font-weight: 800;
+}
+
+.video-card {
+    cursor: pointer;
+}
+
+.video-thumb {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.82);
+    transition: transform 0.25s ease;
+}
+
+.video-card:hover img {
+    transform: scale(1.04);
+}
+
+.video-thumb iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn i {
+    width: 72px;
+    height: 52px;
+    border-radius: 11px;
+    background: #e62117;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-card h3 {
+    margin-top: 22px;
+    font-size: 24px;
+    line-height: 1.18;
+    font-weight: 800;
+}
+
+/* ==========================================================
+   10. KIT DIGITAL
+========================================================== */
+
+.kit-digital-logos {
+    background: #f7f7f7;
+    padding: 36px 0 44px;
+    text-align: center;
+}
+
+.kit-digital-logos img {
+    width: min(900px, 84%);
+    height: auto;
+    display: inline-block;
+}
+
+/* ==========================================================
+   11. FOOTER
+========================================================== */
+
+.site-footer {
+    color: #ffffff;
+    background: var(--green-dark);
+}
+
+.footer-bg {
+    background-image:
+        linear-gradient(rgba(39, 72, 69, 0.92), rgba(39, 72, 69, 0.92)),
+        url('/assets/adicae/fondo-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 78px 0 20px;
+}
+
+.footer-container {
+    max-width: 1500px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.footer-logo {
+    width: 230px;
+    max-width: 230px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: none;
+}
+
+.footer-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logo-icon {
+    width: 88px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.footer-logo-text {
+    width: 170px;
+    height: auto;
+    display: block;
+}
+
+.footer-legal-text {
+    margin: 0;
+    max-width: 1050px;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.footer-separator {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+    margin: 0 0 42px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.1fr 2.2fr 1fr 1fr 1.25fr;
+    gap: 42px;
+    margin-bottom: 55px;
+}
+
+.footer-col h3 {
+    margin: 0 0 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--yellow);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 11px;
+}
+
+.footer-col a,
+.footer-col span {
+    display: block;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.footer-col li a::before {
+    content: "› ";
+    font-weight: 900;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+}
+
+.footer-contact-block {
+    margin-bottom: 20px;
+}
+
+.footer-contact-line {
+    width: 100%;
+    height: 2px;
+    background: var(--yellow);
+    margin: 22px 0;
+}
+
+.footer-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-top: 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    color: #ffffff;
+    padding-top: 10px;
+}
+
+.footer-bottom span {
+    color: #ff3b7f;
+    font-size: 18px;
+}
+
+/* ==========================================================
+   12. PÁGINAS INTERIORES - BASE
+========================================================== */
+
+.inner-hero {
+    position: relative;
+    min-height: 440px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.inner-hero-overlay {
+    min-height: 440px;
+    background: rgba(36, 69, 66, 0.78);
+    display: flex;
+    align-items: center;
+}
+
+.inner-hero-content {
+    max-width: 1250px;
+}
+
+.inner-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.12;
+    font-weight: 800;
+}
+
+.inner-hero p {
+    max-width: 1250px;
+    margin: 0 0 42px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.65;
+    font-weight: 700;
+}
+
+.inner-hero .section-line {
+    margin: 28px 0;
+}
+
+.inner-content-section {
+    background: #fff;
+}
+
+.inner-content-container {
+    max-width: 1280px;
+}
+
+.inner-content-section h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.inner-content-section p {
+    font-size: 17px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+/* ==========================================================
+   13. HISTORIA
+========================================================== */
+
+.history-timeline-section {
+    background: #f7f7f7;
+    padding-top: 10px;
+}
+
+.history-decade {
+    margin-bottom: 64px;
+}
+
+.history-decade:last-child {
+    margin-bottom: 0;
+}
+
+.history-decade h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.history-accordion,
+.transparency-accordion {
+    width: 100%;
+}
+
+.history-item,
+.transparency-item {
+    border-bottom: 2px solid var(--dark);
+}
+
+.history-trigger,
+.transparency-trigger {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.history-trigger {
+    min-height: 58px;
+    padding: 0 10px;
+}
+
+.transparency-trigger {
+    min-height: 66px;
+    padding: 0 10px;
+    gap: 20px;
+    text-align: left;
+}
+
+.history-trigger span {
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.transparency-trigger span {
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.history-trigger i,
+.transparency-trigger i {
+    color: var(--dark);
+    pointer-events: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.history-trigger i {
+    font-size: 24px;
+}
+
+.transparency-trigger i {
+    font-size: 23px;
+}
+
+.history-item.is-open,
+.transparency-item.is-open {
+    border-bottom-color: var(--purple);
+}
+
+.history-item.is-open .history-trigger i,
+.transparency-item.is-open .transparency-trigger i {
+    color: var(--purple);
+}
+
+.history-panel,
+.transparency-content {
+    display: none;
+}
+
+.history-panel {
+    padding: 6px 10px 30px;
+}
+
+.transparency-content {
+    padding: 0 10px 30px;
+}
+
+.history-item.is-open .history-panel,
+.transparency-item.is-open .transparency-content {
+    display: block;
+}
+
+.history-panel p,
+.transparency-content p {
+    margin: 0;
+    color: var(--dark);
+}
+
+.history-panel p {
+    font-size: 16.5px;
+    line-height: 1.75;
+    text-align: justify;
+}
+
+.transparency-content p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.history-panel p + p,
+.transparency-content p + p {
+    margin-top: 18px;
+}
+
+.history-panel-media {
+    margin: 18px 0 22px;
+}
+
+.history-panel-media img,
+.history-panel img {
+    display: block;
+    width: min(600px, 100%);
+    height: auto;
+    margin: 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================
+   14. TAMBIÉN LE PUEDE INTERESAR
+========================================================== */
+
+.related-section {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.related-overlay {
+    background: rgba(36, 69, 66, 0.86);
+    padding: 78px 0;
+}
+
+.related-section h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.related-card {
+    background: #fff;
+    color: var(--dark);
+    padding: 36px 38px;
+    min-height: 195px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.related-card h3 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.related-card .section-line {
+    width: 32px;
+    height: 4px;
+    margin: 22px 0;
+}
+
+.related-card .btn-outline {
+    min-height: 48px;
+    font-size: 15px;
+}
+
+/* ==========================================================
+   15. LOCALIZACIÓN DE SEDES
+========================================================== */
+
+.inner-hero-sedes {
+    position: relative;
+    min-height: 440px;
+    overflow: hidden;
+    background-color: var(--green-dark);
+    color: #fff;
+}
+
+.sedes-map-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sedes-map-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+.inner-hero-sedes::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(36, 69, 66, 0.82);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.inner-hero-sedes .inner-hero-overlay {
+    position: relative;
+    z-index: 2;
+    min-height: 440px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.inner-hero-sedes .container {
+    width: min(1300px, calc(100% - 80px));
+}
+
+.inner-hero-sedes .inner-hero-content {
+    max-width: 900px;
+    padding-top: 2px;
+}
+
+.inner-hero-sedes h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+}
+
+.inner-hero-sedes .section-line {
+    width: 42px;
+    height: 7px;
+    margin: 30px 0 24px;
+    background: var(--yellow);
+}
+
+.inner-hero-sedes p {
+    max-width: 1000px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 800;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.35);
+}
+
+.sedes-section {
+    background: #f7f7f7;
+    padding: 58px 0 82px;
+}
+
+.sedes-section .container {
+    width: min(1380px, calc(100% - 80px));
+}
+
+.sedes-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 22px;
+    margin-bottom: 54px;
+}
+
+.sedes-filter-btn {
+    min-height: 38px;
+    padding: 8px 22px;
+    border: 2px solid var(--purple);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sedes-filter-btn:hover,
+.sedes-filter-btn.is-active {
+    background: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+}
+
+.sedes-community {
+    display: none;
+}
+
+.sedes-community.is-active {
+    display: block;
+}
+
+.sedes-community-header {
+    margin-bottom: 34px;
+}
+
+.sedes-community-header h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.sedes-community-web {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    color: var(--purple);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.sedes-community-web i {
+    color: #000;
+    font-size: 15px;
+}
+
+.sedes-community-header .section-line {
+    width: 42px;
+    height: 7px;
+    margin: 24px 0 0;
+    background: var(--purple);
+}
+
+.sedes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+.sede-card {
+    background: #fff;
+    min-height: 430px;
+    padding: 42px 38px 38px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+}
+
+.sede-card h3 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.sede-card-line {
+    width: 34px;
+    height: 5px;
+    background: var(--purple);
+    margin: 24px 0;
+}
+
+.sede-info-row {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 14px;
+    color: var(--dark);
+    font-size: 15.5px;
+    line-height: 1.65;
+}
+
+.sede-info-row i {
+    margin-top: 5px;
+    color: #000;
+    font-size: 15px;
+    text-align: center;
+}
+
+.sede-info-row a,
+.sede-info-row .is-link {
+    color: var(--purple);
+}
+
+.sede-info-row a:hover {
+    color: var(--purple-dark);
+}
+
+.sede-card-separator {
+    width: 100%;
+    height: 3px;
+    background: var(--purple);
+    margin: 24px 0;
+}
+
+.sede-hours {
+    color: var(--dark);
+    font-size: 14.5px;
+    line-height: 1.75;
+}
+
+.sede-hours strong {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 800;
+}
+
+.sede-hours span {
+    display: block;
+}
+
+/* ==========================================================
+   16. PORTAL DE TRANSPARENCIA
+========================================================== */
+
+.inner-hero-transparencia {
+    min-height: 325px;
+    background-color: var(--green-dark);
+}
+
+.inner-hero-transparencia .inner-hero-overlay {
+    min-height: 325px;
+    background: var(--green-dark);
+}
+
+.inner-hero-transparencia .inner-hero-content {
+    max-width: 1200px;
+}
+
+.inner-hero-transparencia h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.1;
+    font-weight: 800;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.inner-hero-transparencia p {
+    max-width: 1100px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 800;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+}
+
+.transparency-section {
+    background: #f7f7f7;
+    padding: 78px 0 92px;
+}
+
+.transparency-container {
+    max-width: 1280px;
+}
+
+.transparency-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px 26px;
+    margin-bottom: 52px;
+}
+
+.transparency-tab {
+    min-height: 44px;
+    padding: 10px 22px;
+    border: 2px solid var(--purple);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.transparency-tab i {
+    color: var(--purple);
+    font-size: 17px;
+    transition: color 0.2s ease;
+}
+
+.transparency-tab:hover,
+.transparency-tab.is-active {
+    background: var(--purple);
+    color: #fff;
+    border-color: var(--purple);
+}
+
+.transparency-tab:hover i,
+.transparency-tab.is-active i {
+    color: #fff;
+}
+
+.transparency-panel {
+    display: none;
+}
+
+.transparency-panel.is-active {
+    display: block;
+}
+
+.transparency-panel h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.transparency-panel > p {
+    max-width: 1280px;
+    margin: 0 0 32px;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.transparency-content hr {
+    border: 0;
+    border-top: 1px solid rgba(16, 35, 63, 0.25);
+    margin: 16px 0;
+}
+
+.transparency-file-btn {
+    margin: 20px 0 28px;
+    min-height: 46px;
+    font-size: 14.5px;
+}
+
+.transparency-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 22px;
+    margin-top: 36px;
+}
+
+.transparency-files .btn-outline {
+    min-height: 48px;
+    font-size: 14.5px;
+}
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 8px;
+}
+
+.transparency-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    background: #fff;
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.transparency-table th,
+.transparency-table td {
+    padding: 13px 15px;
+    border: 1px solid #e1e1e1;
+    text-align: left;
+    vertical-align: top;
+}
+
+.transparency-table th {
+    background: var(--green-dark);
+    color: #fff;
+    font-weight: 800;
+}
+
+.transparency-table tr:nth-child(even) td {
+    background: #fafafa;
+}
+
+/* ==========================================================
+   17. SALUDO DEL PRESIDENTE
+========================================================== */
+
+.president-section {
+    background: #f7f7f7;
+    padding: 86px 0 92px;
+}
+
+.president-container {
+    max-width: 1500px;
+}
+
+.president-intro {
+    display: grid;
+    grid-template-columns: 410px 1fr;
+    gap: 92px;
+    align-items: center;
+    margin-bottom: 64px;
+}
+
+.president-photo-block {
+    text-align: center;
+}
+
+.president-photo {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    margin: 0 auto 34px;
+}
+
+.president-caption {
+    margin: 0;
+    color: var(--dark);
+    font-size: 12.5px;
+    line-height: 1.4;
+    font-weight: 500;
+    text-align: center;
+}
+
+.president-intro-text {
+    padding-top: 12px;
+}
+
+.president-intro-text > p {
+    max-width: 900px;
+    margin: 0 0 76px;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.65;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.president-body {
+    max-width: 1380px;
+    margin: 0 auto;
+}
+
+.president-body p {
+    margin: 0 0 30px;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.president-quote {
+    margin: 0;
+    padding: 0 0 0 34px;
+    border-left: 6px solid var(--purple);
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.45;
+    font-weight: 800;
+}
+
+.president-intro .president-quote {
+    max-width: 900px;
+}
+
+.president-quote-wide {
+    max-width: 1160px;
+    margin: 82px auto 58px;
+    font-size: 24px;
+    line-height: 1.45;
+}
+
+.president-signature {
+    margin-top: 54px;
+}
+
+.president-signature p {
+    margin: 0 0 10px;
+    color: #777;
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 800;
+    text-align: left;
+}
+
+.president-signature strong {
+    display: block;
+    color: var(--dark);
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+/* ==========================================================
+   18. INFORMACIÓN INSTITUCIONAL Y ORGANIZATIVA
+========================================================== */
+
+.inner-hero-institucional {
+    min-height: 325px;
+    background-color: var(--green-dark);
+}
+
+.inner-hero-institucional .inner-hero-overlay {
+    min-height: 325px;
+    background: var(--green-dark);
+}
+
+.inner-hero-institucional .inner-hero-content {
+    max-width: 1200px;
+}
+
+.inner-hero-institucional h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 46px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.inner-hero-institucional p {
+    max-width: 1150px;
+    margin: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.45;
+    font-weight: 800;
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+}
+
+.institutional-section {
+    background: #f7f7f7;
+    padding: 78px 0 92px;
+}
+
+.institutional-container {
+    max-width: 1380px;
+}
+
+.institutional-tabs {
+    margin-bottom: 52px;
+}
+
+.institutional-tab {
+    text-transform: uppercase;
+}
+
+.institutional-tab i {
+    min-width: 18px;
+    text-align: center;
+}
+
+.institutional-panel h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.institutional-panel h3,
+.institutional-block h3 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.institutional-block h4 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 19px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.institutional-panel p,
+.institutional-panel > p,
+.institutional-block > p {
+    max-width: 1320px;
+    margin: 0;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.institutional-panel p + p {
+    margin-top: 20px;
+}
+
+.institutional-block {
+    margin-top: 42px;
+}
+
+.institutional-block:first-of-type {
+    margin-top: 34px;
+}
+
+.institutional-block .section-line,
+.institutional-panel > .section-line {
+    width: 34px;
+    height: 5px;
+    margin: 22px 0;
+    background: var(--purple);
+}
+
+.institutional-files {
+    margin-top: 36px;
+}
+
+/* Tarjetas con icono */
+
+.institutional-icon-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 28px;
+}
+
+.institutional-icon-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.institutional-icon-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.institutional-icon-card {
+    background: #fff;
+    min-height: 100%;
+    padding: 34px 28px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.institutional-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: rgba(147, 0, 124, 0.08);
+    color: var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.institutional-icon i {
+    font-size: 28px;
+    line-height: 1;
+}
+
+.institutional-icon-card p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+/* Objetivos - tarjetas numeradas */
+
+.institutional-number-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+}
+
+.institutional-number-card {
+    background: #fff;
+    padding: 38px 34px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.institutional-number-card span {
+    display: block;
+    color: var(--purple);
+    font-size: 62px;
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.institutional-number-card p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+/* Participación - tarjetas de contenido */
+
+.institutional-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 26px;
+}
+
+.institutional-info-card {
+    background: #fff;
+    padding: 36px 36px 34px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    min-height: 100%;
+}
+
+.institutional-info-card .section-line {
+    width: 34px;
+    height: 5px;
+    margin: 20px 0 22px;
+}
+
+.institutional-info-card p {
+    margin: 0 0 18px;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+.institutional-info-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Listas institucionales */
+
+.institutional-list {
+    margin: 0 0 26px 22px;
+    padding: 0;
+}
+
+.institutional-list li {
+    margin-bottom: 14px;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+.institutional-list a {
+    color: var(--purple);
+    text-decoration: underline;
+}
+
+.institutional-list a:hover {
+    color: var(--purple-dark);
+}
+
+/* Acordeones institucionales */
+
+.institutional-accordion {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.institutional-accordion-item {
+    border-bottom: 2px solid var(--dark);
+}
+
+.institutional-trigger {
+    width: 100%;
+    min-height: 64px;
+    padding: 0 10px;
+    border: 0;
+    background: transparent;
+    color: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.institutional-trigger span {
+    font-size: 19px;
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.institutional-trigger i {
+    color: var(--dark);
+    font-size: 22px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.institutional-accordion-item.is-open {
+    border-bottom-color: var(--purple);
+}
+
+.institutional-accordion-item.is-open .institutional-trigger i {
+    color: var(--purple);
+}
+
+.institutional-accordion-content {
+    display: none;
+    padding: 0 10px 26px;
+}
+
+.institutional-accordion-item.is-open .institutional-accordion-content {
+    display: block;
+}
+
+.institutional-accordion-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--dark);
+}
+
+/* ==========================================================
+   19. PÁGINA: CONOZCA SUS DERECHOS
+========================================================== */
+
+.derechos-hero {
+    background: #294f4d;
+    color: #ffffff;
+    padding: 88px 0 76px;
+}
+
+.derechos-hero-container,
+.derechos-glosario-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.derechos-hero-content {
+    max-width: 1240px;
+}
+
+.derechos-hero h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 28px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.derechos-hero-line {
+    width: 42px;
+    height: 5px;
+    background: var(--yellow-alt);
+    margin-bottom: 24px;
+}
+
+.derechos-hero h2 {
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 800;
+    margin: 0 0 20px;
+    color: #ffffff;
+}
+
+.derechos-hero p {
+    max-width: 1180px;
+    font-size: 16px;
+    line-height: 1.75;
+    font-weight: 500;
+    margin: 0;
+    color: #ffffff;
+}
+
+.derechos-hero p strong {
+    font-weight: 800;
+}
+
+.derechos-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 58px;
+}
+
+.btn-derechos {
+    min-height: 46px;
+    padding: 0 24px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-derechos-outline {
+    background: #ffffff;
+    border: 2px solid #9b007c;
+    color: #101827;
+}
+
+.btn-derechos-outline:hover {
+    background: #f5f5f5;
+    color: #9b007c;
+}
+
+.btn-derechos-solid {
+    background: #9b007c;
+    border: 2px solid #9b007c;
+    color: #ffffff;
+}
+
+.btn-derechos-solid:hover {
+    background: #7e0c6e;
+    border-color: #7e0c6e;
+    color: #ffffff;
+}
+
+.btn-derechos i {
+    font-size: 14px;
+}
+
+/* Plataforma de reclamaciones */
+
+.derechos-plataforma {
+    position: relative;
+    padding: 90px 0 85px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.82)),
+        url('/images/derechos-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.derechos-plataforma-container {
+    max-width: 1340px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.derechos-plataforma-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.derechos-plataforma-texto h2 {
+    max-width: 680px;
+    margin: 0 0 28px;
+    font-size: 40px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #14213d;
+    letter-spacing: -0.6px;
+}
+
+.derechos-plataforma-texto h2 span {
+    color: var(--purple-alt);
+}
+
+.derechos-plataforma-line {
+    width: 36px;
+    height: 5px;
+    background: var(--purple-alt);
+    margin-bottom: 34px;
+}
+
+.derechos-plataforma-texto p {
+    max-width: 650px;
+    margin: 0 0 34px;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #14213d;
+    font-weight: 500;
+}
+
+.derechos-plataforma-texto p strong {
+    font-weight: 800;
+}
+
+.derechos-plataforma-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 28px;
+    border-radius: 8px;
+    background: var(--purple-alt);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.derechos-plataforma-btn:hover {
+    background: #6f0065;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.derechos-plataforma-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.derechos-plataforma-img {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 34px;
+}
+
+.derechos-plataforma-img img {
+    width: 100%;
+    display: block;
+}
+
+.derechos-plataforma-iconos {
+    width: 100%;
+    max-width: 680px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+    text-align: center;
+}
+
+.derechos-plataforma-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.derechos-plataforma-icon {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: var(--purple-alt);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    margin-bottom: 18px;
+}
+
+.derechos-plataforma-item h4 {
+    margin: 0;
+    max-width: 170px;
+    font-size: 20px;
+    line-height: 1.15;
+    font-weight: 800;
+    color: #14213d;
+}
+
+/* Formulario de consulta */
+
+.derechos-formulario-section {
+    background: #f5f5f5;
+    padding: 70px 0 78px;
+}
+
+.derechos-formulario-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 22px;
+}
+
+.derechos-formulario-box {
+    background: #ffffff;
+    padding: 58px 56px 68px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.16);
+}
+
+.derechos-formulario-box h2 {
+    margin: 0 0 22px;
+    color: var(--dark-blue);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.derechos-formulario-line {
+    width: 30px;
+    height: 5px;
+    background: var(--purple-alt);
+    margin-bottom: 26px;
+}
+
+.derechos-formulario-intro {
+    max-width: 540px;
+    margin: 0 0 36px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--dark-blue);
+}
+
+.derechos-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 22px;
+}
+
+.derechos-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.derechos-form-full {
+    grid-column: 1 / -1;
+}
+
+.derechos-form-group label {
+    margin-bottom: 7px;
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--dark-blue);
+    font-weight: 800;
+}
+
+.derechos-form-group label span {
+    color: #e33131;
+}
+
+.derechos-form-group input,
+.derechos-form-group select,
+.derechos-form-group textarea {
+    width: 100%;
+    min-height: 47px;
+    border: 1px solid #8d8d8d;
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 0 16px;
+    color: var(--dark-blue);
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.derechos-form-group textarea {
+    min-height: 104px;
+    padding-top: 12px;
+    resize: vertical;
+}
+
+.derechos-form-group input::placeholder,
+.derechos-form-group textarea::placeholder {
+    color: #7f8aa0;
+}
+
+.derechos-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.derechos-checkbox input {
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
+    min-height: 14px;
+    margin-top: 3px;
+    padding: 0;
+}
+
+.derechos-checkbox label {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+.derechos-checkbox a {
+    color: var(--purple-alt);
+    text-decoration: none;
+}
+
+.derechos-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.derechos-form-submit {
+    width: 100%;
+    height: 45px;
+    border: 0;
+    border-radius: 7px;
+    background: var(--purple-alt);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.derechos-form-submit:hover {
+    background: #6f0065;
+}
+
+/* Glosario */
+
+.derechos-glosario {
+    position: relative;
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.9), rgba(41, 79, 77, 0.9)),
+        url('/images/glosario-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 76px 0 0;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.derechos-glosario-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: end;
+}
+
+.derechos-glosario-texto {
+    padding-bottom: 58px;
+}
+
+.derechos-glosario-texto h2 {
+    max-width: 780px;
+    margin: 0 0 24px;
+    color: #ffffff;
+    font-size: 31px;
+    line-height: 1.22;
+    font-weight: 800;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.derechos-glosario-line {
+    width: 31px;
+    height: 5px;
+    background: var(--yellow-alt);
+    margin-bottom: 26px;
+}
+
+.derechos-glosario-texto p {
+    max-width: 690px;
+    margin: 0 0 58px;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1.38;
+    font-weight: 800;
+}
+
+.derechos-glosario-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 49px;
+    padding: 0 24px;
+    border-radius: 8px;
+    background: var(--purple-alt);
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.derechos-glosario-btn:hover {
+    background: #6f0065;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.derechos-glosario-img {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.derechos-glosario-img img {
+    width: 100%;
+    max-width: 325px;
+    display: block;
+}
+
+/* ==========================================================
+   20. CASOS COLECTIVOS - PÁGINA DE CASO
+========================================================== */
+
+.caso-hero {
+    background: #294f4d;
+    color: #ffffff;
+    padding: 86px 0 78px;
+}
+
+.caso-hero-container,
+.caso-nav-container,
+.caso-info-container,
+.caso-news-container,
+.caso-opciones-container,
+.caso-convocatorias-container,
+.caso-documentos-container,
+.caso-faq-container,
+.caso-claim-container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.caso-hero-content {
+    max-width: 900px;
+}
+
+.caso-hero h1 {
+    margin: 0 0 28px;
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.caso-hero h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 22px;
+    line-height: 1.35;
+    font-weight: 800;
+}
+
+.caso-line {
+    width: 38px;
+    height: 5px;
+    margin-bottom: 26px;
+}
+
+.caso-line-yellow {
+    background: var(--yellow-alt);
+}
+
+.caso-line-purple {
+    background: var(--purple-alt);
+}
+
+/* Botonera */
+
+.caso-nav-section {
+    background: #f6f6f6;
+    padding: 70px 0 48px;
+}
+
+.caso-nav-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.caso-nav-btn {
+    min-height: 45px;
+    padding: 0 25px;
+    border: 2px solid var(--purple-alt);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--dark-blue);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.caso-nav-btn i {
+    color: var(--purple-alt);
+    font-size: 18px;
+}
+
+.caso-nav-btn:hover,
+.caso-nav-btn.active {
+    background: var(--purple-alt);
+    color: #ffffff;
+}
+
+.caso-nav-btn:hover i,
+.caso-nav-btn.active i {
+    color: #ffffff;
+}
+
+/* Pestañas internas */
+
+.caso-tab-panel {
+    display: none;
+}
+
+.caso-tab-panel.active {
+    display: block;
+}
+
+/* Bloques generales de caso */
+
+.caso-section-heading h2 {
+    margin: 0 0 22px;
+    color: var(--dark-blue);
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.caso-section-intro {
+    margin: 0 0 48px;
+    color: var(--dark-blue);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Reciba información */
+
+.caso-info-section {
+    background: #f6f6f6;
+    padding: 30px 0 80px;
+}
+
+.caso-info-text {
+    margin: 0 0 58px;
+    color: var(--dark-blue);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Formulario multipaso */
+
+.caso-form-card {
+    max-width: 760px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 42px 44px 46px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.16);
+}
+
+.caso-form-card h2 {
+    margin: 0 0 22px;
+    color: var(--dark-blue);
+    font-size: 31px;
+    font-weight: 800;
+}
+
+.caso-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 20px 0 42px;
+}
+
+.caso-step {
+    width: 92px;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    color: #bfc8d0;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+}
+
+.caso-step span {
+    width: 39px;
+    height: 39px;
+    border: 2px solid #cbd4db;
+    border-radius: 50%;
+    margin: 0 auto 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd4db;
+    background: #ffffff;
+    font-size: 17px;
+}
+
+.caso-step strong {
+    display: block;
+    font-size: 15px;
+    line-height: 1.15;
+}
+
+.caso-step.active {
+    color: var(--purple-alt);
+}
+
+.caso-step.active span {
+    background: var(--purple-alt);
+    border-color: var(--purple-alt);
+    color: #ffffff;
+}
+
+.caso-step-line {
+    flex: 1;
+    height: 2px;
+    margin-top: 19px;
+    background: #bfc8d0;
+}
+
+.caso-form-step {
+    display: none;
+}
+
+.caso-form-step.active {
+    display: block;
+}
+
+.caso-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 24px;
+}
+
+.caso-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.caso-form-full {
+    grid-column: 1 / -1;
+}
+
+.caso-form-group label,
+.caso-checkbox-block > label {
+    margin-bottom: 8px;
+    color: var(--dark-blue);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.caso-form-group label span,
+.caso-checkbox-block > label span {
+    color: #e33131;
+}
+
+.caso-form-group input,
+.caso-form-group select,
+.caso-form-group textarea {
+    width: 100%;
+    min-height: 48px;
+    border: 1px solid #7f7f7f;
+    border-radius: 4px;
+    padding: 0 16px;
+    color: var(--dark-blue);
+    font-size: 17px;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+.caso-form-group textarea {
+    min-height: 48px;
+    padding-top: 11px;
+    resize: vertical;
+}
+
+.caso-form-group input::placeholder,
+.caso-form-group textarea::placeholder {
+    color: #7f8aa0;
+}
+
+.caso-form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.caso-form-actions.one-button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.caso-form-btn {
+    min-height: 48px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.caso-form-btn-outline {
+    border: 2px solid var(--purple-alt);
+    background: #ffffff;
+    color: var(--dark-blue);
+}
+
+.caso-form-btn-solid {
+    border: 2px solid var(--purple-alt);
+    background: var(--purple-alt);
+    color: #ffffff;
+}
+
+.caso-form-btn-outline:hover {
+    background: #f7eef5;
+}
+
+.caso-form-btn-solid:hover {
+    background: #6f0065;
+    border-color: #6f0065;
+}
+
+.caso-checkbox-block {
+    margin-bottom: 34px;
+}
+
+.caso-checkbox-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.caso-checkbox-row input {
+    width: 15px;
+    height: 15px;
+    margin-top: 7px;
+}
+
+.caso-checkbox-row label {
+    color: var(--dark-blue);
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.caso-checkbox-row a {
+    color: var(--purple-alt);
+    text-decoration: none;
+}
+
+/* Noticias */
+
+.caso-news-section {
+    background: #f6f6f6;
+    padding: 70px 0 90px;
+}
+
+.caso-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.caso-news-card {
+    min-height: 430px;
+    background: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.caso-news-content {
+    padding: 28px 28px 34px;
+}
+
+.caso-news-card h3 {
+    margin: 0 0 28px;
+    color: var(--dark-blue);
+    font-size: 19px;
+    line-height: 1.28;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.caso-news-card p {
+    margin: 0 0 28px;
+    color: #6c6c6c;
+    font-size: 16px;
+    line-height: 1.45;
+}
+
+.caso-news-card a {
+    color: var(--dark-blue);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.caso-news-date {
+    border-top: 1px solid #dedede;
+    padding: 17px 28px;
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+/* Bloque común reclamar ADICAE */
+
+.caso-claim-section {
+    background: #f6f6f6;
+    padding: 75px 0 70px;
+}
+
+.caso-claim-block {
+    display: grid;
+    grid-template-columns: 370px 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.caso-claim-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caso-claim-text h2 {
+    margin: 0 0 22px;
+    color: var(--dark-blue);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.caso-claim-text p {
+    max-width: 760px;
+    margin: 0 0 26px;
+    color: var(--dark-blue);
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.caso-small-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 26px;
+    border: 2px solid var(--purple-alt);
+    border-radius: 8px;
+    background: #ffffff;
+    color: var(--dark-blue);
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.caso-small-btn:hover {
+    background: var(--purple-alt);
+    color: #ffffff;
+}
+
+/* Opciones */
+
+.caso-opciones-section {
+    position: relative;
+    padding: 72px 0 88px;
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.88), rgba(41, 79, 77, 0.88)),
+        url('/images/fwu-opciones-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.caso-opciones-heading h2 {
+    margin: 0 0 22px;
+    color: #ffffff;
+    font-size: 31px;
+    font-weight: 800;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.caso-opciones-heading p {
+    max-width: 1220px;
+    margin: 0 0 48px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 800;
+}
+
+.caso-opciones-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.caso-opcion-card {
+    background: #ffffff;
+    color: var(--dark-blue);
+    padding: 38px 42px;
+    min-height: 210px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.18);
+}
+
+.caso-opcion-card h3 {
+    margin: 0 0 22px;
+    font-size: 25px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.caso-opcion-card p {
+    margin: 0 0 22px;
+    font-size: 17px;
+    line-height: 1.35;
+}
+
+.caso-email {
+    font-size: 22px !important;
+    margin-top: 42px !important;
+}
+
+/* Convocatorias */
+
+.caso-convocatorias-section {
+    background: #f6f6f6;
+    padding: 70px 0 85px;
+}
+
+.caso-convocatorias-section .caso-claim-block {
+    margin-top: 140px;
+}
+
+/* Documentos */
+
+.caso-documentos-section {
+    background: #ffffff;
+    padding: 70px 0 80px;
+}
+
+.caso-documentos-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    max-width: 980px;
+}
+
+.caso-documentos-list a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 20px;
+    border: 1px solid #e2e2e2;
+    background: #f9f9f9;
+    color: var(--dark-blue);
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.caso-documentos-list a i {
+    color: var(--purple-alt);
+    font-size: 20px;
+}
+
+.caso-documentos-list a:hover {
+    border-color: var(--purple-alt);
+    background: #f7eef5;
+}
+
+/* FAQ */
+
+.caso-faq-section {
+    background: #f6f6f6;
+    padding: 70px 0 90px;
+}
+
+.caso-faq-title {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.caso-faq-title span {
+    min-height: 48px;
+    padding: 0 28px;
+    border-radius: 8px;
+    background: var(--purple-alt);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.caso-faq-list {
+    margin-top: 22px;
+}
+
+.caso-faq-item {
+    border-bottom: 2px solid var(--dark-blue);
+}
+
+.caso-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 10px;
+    color: var(--dark-blue);
+    font-size: 27px;
+    line-height: 1.25;
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.caso-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.caso-faq-item summary::after {
+    content: "\f078";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 22px;
+    transition: transform 0.2s ease;
+}
+
+.caso-faq-item[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.caso-faq-content {
+    padding: 0 10px 24px;
+    color: var(--dark-blue);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.caso-faq-content ul {
+    margin: 10px 0 0 22px;
+}
+
+.caso-faq-content h3 {
+    margin: 22px 0 10px;
+    color: var(--dark-blue);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.caso-table-wrap {
+    overflow-x: auto;
+}
+
+.caso-faq-content table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.caso-faq-content th,
+.caso-faq-content td {
+    border: 1px solid #d6d6d6;
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.caso-faq-content th {
+    background: var(--purple-alt);
+    color: #ffffff;
+}
+
+/* ==========================================================
+   21. RESPONSIVE - 1300
+========================================================== */
+
+@media (max-width: 1300px) {
+    .main-nav {
+        gap: 26px;
+    }
+
+    .main-nav > a,
+    .main-nav .nav-link {
+        font-size: 12px;
+    }
+
+    .main-nav a span,
+    .main-nav .nav-link span {
+        font-size: 8.6px;
+    }
+
+    .header-logo {
+        flex-basis: 230px;
+    }
+
+    .header-logo img {
+        width: 190px;
+    }
+}
+
+/* ==========================================================
+   22. RESPONSIVE - 1100
+========================================================== */
+
+@media (max-width: 1100px) {
+    .container {
+        width: calc(100% - 48px);
+    }
+
+    .header-top {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .header-top-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 18px;
+    }
+
+    .top-btn {
+        height: 40px;
+        padding: 0 24px;
+        font-size: 15px;
+    }
+
+    .header-socials {
+        gap: 12px;
+    }
+
+    .header-socials a,
+    .header-socials button {
+        font-size: 17px;
+    }
+
+    .header-inner {
+        height: auto;
+        padding: 22px 18px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .header-logo {
+        flex-basis: auto;
+    }
+
+    .header-logo img {
+        width: 210px;
+    }
+
+    .main-nav {
+        width: 100%;
+        margin-left: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 22px;
+    }
+
+    .dropdown-menu {
+        left: 0;
+        transform: translateY(12px);
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+        transform: translateY(0);
+    }
+
+    .hero-content-purple,
+    .hero-box-light,
+    .hero-alert-box {
+        left: 30px;
+        right: 30px;
+    }
+
+    .hero-content-purple {
+        top: 60px;
+    }
+
+    .hero-content-purple h1 {
+        font-size: 27px;
+    }
+
+    .hero-box-light,
+    .hero-alert-box {
+        width: auto;
+    }
+
+    .hero-floating-btn,
+    .hero-alert-btn {
+        left: 30px;
+    }
+
+    .hero-buttons {
+        left: 30px;
+        transform: none;
+        flex-direction: column;
+    }
+
+    .webs-top-grid,
+    .publications-grid,
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .web-card img {
+        height: 220px;
+    }
+
+    .cases-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .cases-swiper {
+        padding: 0 52px 60px;
+    }
+
+    .inner-hero,
+    .inner-hero-overlay,
+    .inner-hero-sedes,
+    .inner-hero-sedes .inner-hero-overlay {
+        min-height: 390px;
+    }
+
+    .inner-hero h1,
+    .inner-hero-sedes h1,
+    .inner-hero-transparencia h1,
+    .inner-hero-institucional h1 {
+        font-size: 40px;
+    }
+
+    .inner-hero p,
+    .inner-hero-sedes p,
+    .inner-hero-transparencia p,
+    .inner-hero-institucional p {
+        font-size: 18px;
+    }
+
+    .inner-hero-sedes .container,
+    .sedes-section .container {
+        width: calc(100% - 48px);
+    }
+
+    .sedes-filter {
+        gap: 16px;
+        margin-bottom: 44px;
+    }
+
+    .sedes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sede-card {
+        padding: 36px 32px;
+    }
+
+    .inner-hero-transparencia,
+    .inner-hero-transparencia .inner-hero-overlay,
+    .inner-hero-institucional,
+    .inner-hero-institucional .inner-hero-overlay {
+        min-height: 300px;
+    }
+
+    .transparency-tabs,
+    .institutional-tabs {
+        gap: 18px;
+        margin-bottom: 44px;
+    }
+
+    .transparency-tab {
+        font-size: 14px;
+    }
+
+    .institutional-section {
+        padding: 68px 0 82px;
+    }
+
+    .institutional-number-grid,
+    .institutional-info-grid,
+    .institutional-icon-grid-3,
+    .institutional-icon-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .institutional-number-card {
+        padding: 32px 28px;
+        grid-template-columns: 64px 1fr;
+    }
+
+    .institutional-number-card span {
+        font-size: 52px;
+    }
+
+    .institutional-info-card {
+        padding: 30px 28px;
+    }
+
+    .president-section {
+        padding: 70px 0 78px;
+    }
+
+    .president-intro {
+        grid-template-columns: 320px 1fr;
+        gap: 52px;
+        align-items: start;
+    }
+
+    .president-photo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .president-intro-text > p {
+        margin-bottom: 44px;
+        font-size: 16.5px;
+    }
+
+    .president-quote {
+        font-size: 21px;
+        padding-left: 28px;
+    }
+
+    .president-quote-wide {
+        margin: 64px auto 46px;
+        font-size: 22px;
+    }
+
+    .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-actions {
+        grid-column: span 2;
+        flex-direction: row;
+    }
+}
+
+/* ==========================================================
+   23. RESPONSIVE - 992
+========================================================== */
+
+@media (max-width: 992px) {
+    .derechos-hero {
+        padding: 62px 0 56px;
+    }
+
+    .derechos-hero h1 {
+        font-size: 36px;
+    }
+
+    .derechos-hero h2 {
+        font-size: 19px;
+    }
+
+    .derechos-plataforma {
+        padding: 65px 0;
+    }
+
+    .derechos-plataforma-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .derechos-plataforma-texto h2 {
+        font-size: 34px;
+    }
+
+    .derechos-plataforma-texto p {
+        font-size: 16px;
+    }
+
+    .derechos-glosario-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        align-items: start;
+    }
+
+    .derechos-glosario-texto {
+        padding-bottom: 0;
+    }
+
+    .derechos-glosario-img {
+        justify-content: flex-start;
+    }
+
+    .caso-news-grid,
+    .caso-opciones-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caso-claim-block {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+
+    .caso-convocatorias-section .caso-claim-block {
+        margin-top: 70px;
+    }
+
+    .caso-claim-img {
+        max-width: 420px;
+    }
+
+    .caso-faq-item summary {
+        font-size: 22px;
+    }
+}
+
+/* ==========================================================
+   24. RESPONSIVE - 800
+========================================================== */
+
+@media (max-width: 800px) {
+    .president-intro {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        margin-bottom: 48px;
+    }
+
+    .president-photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .president-intro-text {
+        padding-top: 0;
+    }
+
+    .president-intro-text > p,
+    .president-body p {
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .president-quote,
+    .president-quote-wide {
+        font-size: 20px;
+        line-height: 1.45;
+        padding-left: 22px;
+        border-left-width: 5px;
+    }
+
+    .president-quote-wide {
+        margin: 48px 0 38px;
+    }
+
+    .president-signature p {
+        font-size: 19px;
+    }
+
+    .president-signature strong {
+        font-size: 24px;
+    }
+}
+
+/* ==========================================================
+   25. RESPONSIVE - 700
+========================================================== */
+
+@media (max-width: 700px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .header-top-inner {
+        justify-content: flex-start;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav > a,
+    .main-nav .nav-link {
+        text-align: left;
+    }
+
+    .dropdown-menu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        width: 100%;
+        display: none;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .search-box p {
+        font-size: 20px;
+    }
+
+    .search-form input {
+        font-size: 26px;
+    }
+
+    .section {
+        padding: 54px 0;
+    }
+
+    .section h2,
+    .cases-section h2 {
+        font-size: 28px;
+    }
+
+    .section-intro,
+    .section p {
+        font-size: 17px;
+    }
+
+    .webs-top-grid,
+    .publications-grid,
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .web-card img {
+        height: 210px;
+    }
+
+    .webs-bottom-prev,
+    .webs-bottom-next {
+        width: 42px;
+        height: 42px;
+    }
+
+    .hero-slide,
+    .hero-slide-sentencia {
+        height: 560px;
+    }
+
+    .hero-content-purple {
+        display: block;
+        left: 18px;
+        right: 18px;
+        top: 40px;
+    }
+
+    .hero-content-purple h1 {
+        font-size: 24px;
+    }
+
+    .hero-news-btn {
+        display: inline-block;
+        margin: 0 0 15px 28px;
+    }
+
+    .hero-box-light,
+    .hero-alert-box {
+        left: 18px;
+        right: 18px;
+        top: 40px;
+        width: auto;
+    }
+
+    .hero-box-light h1,
+    .hero-alert-box h1 {
+        font-size: 23px;
+        line-height: 1.25;
+    }
+
+    .hero-box-light p {
+        font-size: 15px;
+    }
+
+    .hero-floating-btn,
+    .hero-alert-btn {
+        left: 18px;
+        right: 18px;
+        bottom: 45px;
+    }
+
+    .section-title-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cases-section {
+        background-attachment: scroll;
+    }
+
+    .cases-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cases-carousel-wrap {
+        padding: 0 42px;
+    }
+
+    .cases-swiper {
+        padding: 0 0 60px;
+    }
+
+    .case-card {
+        min-height: 520px;
+    }
+
+    .case-card img {
+        height: 200px;
+    }
+
+    .inner-hero,
+    .inner-hero-overlay {
+        min-height: 430px;
+    }
+
+    .inner-hero h1,
+    .inner-hero-sedes h1,
+    .inner-hero-transparencia h1,
+    .inner-hero-institucional h1 {
+        font-size: 34px;
+        line-height: 1.12;
+    }
+
+    .inner-hero p,
+    .inner-hero-sedes p,
+    .inner-hero-transparencia p,
+    .inner-hero-institucional p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .inner-hero-sedes,
+    .inner-hero-sedes .inner-hero-overlay {
+        min-height: 380px;
+    }
+
+    .inner-hero-sedes .container,
+    .sedes-section .container {
+        width: calc(100% - 32px);
+    }
+
+    .sedes-section {
+        padding: 44px 0 64px;
+    }
+
+    .sedes-filter {
+        gap: 12px;
+        margin-bottom: 38px;
+    }
+
+    .sedes-filter-btn {
+        width: 100%;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .sedes-community-header h2 {
+        font-size: 27px;
+    }
+
+    .sedes-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .sede-card {
+        min-height: auto;
+        padding: 32px 26px;
+    }
+
+    .sede-card h3 {
+        font-size: 22px;
+    }
+
+    .sede-info-row {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .history-decade {
+        margin-bottom: 48px;
+    }
+
+    .history-decade h2,
+    .inner-content-section h2,
+    .related-section h2,
+    .transparency-panel h2 {
+        font-size: 27px;
+    }
+
+    .history-trigger,
+    .transparency-trigger {
+        padding: 0 4px;
+    }
+
+    .history-trigger {
+        min-height: 54px;
+    }
+
+    .transparency-trigger {
+        min-height: 58px;
+    }
+
+    .history-trigger span {
+        font-size: 22px;
+    }
+
+    .transparency-trigger span {
+        font-size: 17px;
+    }
+
+    .history-trigger i,
+    .transparency-trigger i {
+        font-size: 21px;
+    }
+
+    .history-panel {
+        padding: 4px 4px 26px;
+    }
+
+    .transparency-content {
+        padding: 0 4px 26px;
+    }
+
+    .history-panel p,
+    .transparency-content p,
+    .transparency-panel > p {
+        font-size: 15.5px;
+        line-height: 1.7;
+    }
+
+    .inner-hero-transparencia,
+    .inner-hero-transparencia .inner-hero-overlay,
+    .inner-hero-institucional,
+    .inner-hero-institucional .inner-hero-overlay {
+        min-height: 330px;
+    }
+
+    .transparency-section,
+    .institutional-section {
+        padding: 54px 0 70px;
+    }
+
+    .transparency-tabs,
+    .institutional-tabs {
+        gap: 12px;
+        margin-bottom: 38px;
+    }
+
+    .transparency-tab,
+    .institutional-tab {
+        width: 100%;
+        justify-content: center;
+        min-height: 44px;
+        font-size: 14px;
+    }
+
+    .transparency-files {
+        flex-direction: column;
+    }
+
+    .transparency-files .btn-outline,
+    .transparency-file-btn {
+        width: 100%;
+    }
+
+    .institutional-panel h2 {
+        font-size: 27px;
+    }
+
+    .institutional-panel h3,
+    .institutional-block h3 {
+        font-size: 21px;
+    }
+
+    .institutional-block h4 {
+        font-size: 18px;
+    }
+
+    .institutional-panel p,
+    .institutional-panel > p,
+    .institutional-block > p {
+        font-size: 15.5px;
+        line-height: 1.7;
+    }
+
+    .institutional-block {
+        margin-top: 38px;
+    }
+
+    .institutional-number-grid,
+    .institutional-info-grid,
+    .institutional-icon-grid-3,
+    .institutional-icon-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .institutional-number-card {
+        padding: 28px 24px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .institutional-number-card span {
+        font-size: 46px;
+    }
+
+    .institutional-info-card,
+    .institutional-icon-card {
+        padding: 28px 24px;
+    }
+
+    .institutional-icon {
+        width: 62px;
+        height: 62px;
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .institutional-icon i {
+        font-size: 24px;
+    }
+
+    .institutional-trigger {
+        min-height: 58px;
+        padding: 0 4px;
+    }
+
+    .institutional-trigger span {
+        font-size: 17px;
+        line-height: 1.35;
+    }
+
+    .institutional-accordion-content {
+        padding: 0 4px 24px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-card {
+        padding: 30px 26px;
+    }
+
+    .kit-digital-logos img {
+        width: 95%;
+    }
+
+    .footer-bg {
+        padding: 55px 0 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-actions {
+        grid-column: auto;
+        flex-direction: column;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .footer-legal-text {
+        font-size: 15px;
+    }
+
+    .caso-hero-container,
+    .caso-nav-container,
+    .caso-info-container,
+    .caso-news-container,
+    .caso-opciones-container,
+    .caso-convocatorias-container,
+    .caso-documentos-container,
+    .caso-faq-container,
+    .caso-claim-container {
+        padding: 0 22px;
+    }
+
+    .caso-hero h1 {
+        font-size: 36px;
+    }
+
+    .caso-nav-buttons {
+        gap: 14px;
+    }
+
+    .caso-nav-btn {
+        width: 100%;
+    }
+
+    .caso-form-card {
+        padding: 34px 24px 38px;
+    }
+
+    .caso-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .caso-steps {
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 8px;
+    }
+
+    .caso-step {
+        min-width: 82px;
+    }
+
+    .caso-step-line {
+        min-width: 45px;
+    }
+
+    .caso-form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .caso-checkbox-row label {
+        font-size: 16px;
+    }
+
+    .caso-claim-section {
+        padding: 50px 0;
+    }
+
+    .caso-claim-text h2 {
+        font-size: 27px;
+    }
+
+    .caso-opcion-card {
+        padding: 30px 26px;
+    }
+
+    .caso-faq-item summary {
+        font-size: 20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .caso-faq-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* ==========================================================
+   26. RESPONSIVE - 640
+========================================================== */
+
+@media (max-width: 640px) {
+    .derechos-hero-container,
+    .derechos-plataforma-container,
+    .derechos-glosario-container {
+        padding: 0 22px;
+    }
+
+    .derechos-hero h1 {
+        font-size: 33px;
+    }
+
+    .derechos-hero-buttons {
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 36px;
+    }
+
+    .btn-derechos {
+        width: 100%;
+    }
+
+    .derechos-plataforma {
+        padding: 50px 0;
+    }
+
+    .derechos-plataforma-texto h2 {
+        font-size: 28px;
+    }
+
+    .derechos-plataforma-iconos {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .derechos-plataforma-icon {
+        width: 88px;
+        height: 88px;
+        font-size: 36px;
+    }
+
+    .derechos-plataforma-item h4 {
+        font-size: 19px;
+    }
+
+    .derechos-plataforma-btn {
+        width: 100%;
+        text-align: center;
+        padding: 0 18px;
+    }
+
+    .derechos-formulario-section {
+        padding: 45px 0 55px;
+    }
+
+    .derechos-formulario-box {
+        padding: 38px 24px 44px;
+    }
+
+    .derechos-formulario-box h2 {
+        font-size: 27px;
+    }
+
+    .derechos-form-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .derechos-checkbox label {
+        font-size: 15px;
+    }
+
+    .derechos-glosario {
+        padding: 52px 0 0;
+    }
+
+    .derechos-glosario-texto h2 {
+        font-size: 27px;
+    }
+
+    .derechos-glosario-texto p {
+        font-size: 18px;
+        margin-bottom: 34px;
+    }
+
+    .derechos-glosario-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .derechos-glosario-img img {
+        max-width: 280px;
+    }
+}
+
+/* ==========================================================
+   27. RESPONSIVE - 520
+========================================================== */
+
+@media (max-width: 520px) {
+    .president-section {
+        padding: 54px 0 62px;
+    }
+
+    .president-photo {
+        width: 220px;
+        height: 220px;
+    }
+
+    .president-caption {
+        font-size: 12px;
+    }
+
+    .president-intro-text > p {
+        margin-bottom: 34px;
+    }
+
+    .president-quote,
+    .president-quote-wide {
+        font-size: 18px;
+    }
+}
+/* ==========================================================
+   COMPLETADO PROYECTO - BLOQUES REUTILIZABLES
+========================================================== */
+
+.inner-hero-simple {
+    min-height: 325px;
+    background-color: var(--green-dark);
+}
+
+.inner-hero-simple .inner-hero-overlay {
+    min-height: 325px;
+    background: var(--green-dark);
+}
+
+.inner-hero-actualidad {
+    background-image: linear-gradient(rgba(36, 69, 66, 0.74), rgba(36, 69, 66, 0.74)), url('/assets/adicae/HERO-ACTUALIDAD-ADICAE.webp');
+}
+
+.generic-section {
+    padding: 78px 0 92px;
+    background: #ffffff;
+}
+
+.generic-section-gray {
+    background: #f7f7f7;
+}
+
+.generic-container {
+    max-width: 1320px;
+}
+
+.generic-container.narrow,
+.legal-container {
+    max-width: 1120px;
+}
+
+.generic-section h2,
+.legal-section h2,
+.article-content h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.generic-section p,
+.legal-section p,
+.article-content p,
+.generic-intro {
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.generic-card-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.generic-card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.generic-card-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.generic-card {
+    background: #ffffff;
+    padding: 34px 30px;
+    min-height: 220px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+    color: var(--dark);
+}
+
+.generic-card h3 {
+    margin: 0 0 18px;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.generic-card p {
+    margin: 0 0 22px;
+    font-size: 16.5px;
+    line-height: 1.65;
+}
+
+.generic-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(147, 0, 124, 0.08);
+    color: var(--purple);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 22px;
+}
+
+.media-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.media-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.colectivos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 38px;
+}
+
+.colectivo-card {
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.colectivo-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.colectivo-card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.colectivo-card-content h3 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.22;
+    font-weight: 800;
+}
+
+.colectivo-card-content p {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.colectivo-card-content .case-btn {
+    margin-top: auto;
+}
+
+.news-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.news-list-card {
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0,0,0,.10);
+    padding: 30px 28px;
+    min-height: 275px;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-list-card span,
+.article-date {
+    display: block;
+    margin-bottom: 16px;
+    color: #8d8d8d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.news-list-card h3 {
+    margin: 0 0 18px;
+    color: var(--dark);
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.news-list-card p {
+    margin: 0 0 22px;
+    color: #606060;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.news-list-card a {
+    margin-top: auto;
+    color: var(--dark);
+    font-weight: 800;
+}
+
+.legal-section {
+    background: #f7f7f7;
+    padding: 78px 0 92px;
+}
+
+.legal-section ul {
+    margin: 0 0 28px 22px;
+    padding: 0;
+}
+
+.legal-section li {
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+.article-content {
+    background: #ffffff;
+    padding: 44px 48px;
+    box-shadow: 0 6px 22px rgba(0,0,0,.10);
+}
+
+.article-content p {
+    margin: 0 0 24px;
+}
+
+.article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 34px;
+}
+
+.socio-price-section {
+    background: var(--green-dark);
+    color: #ffffff;
+    padding: 70px 0;
+}
+
+.socio-price-container {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 55px;
+    align-items: center;
+}
+
+.socio-price-container h2,
+.socio-price-container p {
+    color: #ffffff;
+}
+
+.socio-price-container h2 {
+    margin: 0;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.socio-price-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.socio-price-card {
+    background: #ffffff;
+    color: var(--dark);
+    padding: 32px;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(0,0,0,.18);
+}
+
+.socio-price-card strong {
+    display: block;
+    color: var(--purple);
+    font-size: 78px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.socio-price-card span {
+    display: block;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.socio-price-card p {
+    margin: 12px 0 0;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.socio-form-card {
+    max-width: 980px;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.generic-empty-box {
+    background: #ffffff;
+    padding: 34px 36px;
+    box-shadow: 0 6px 22px rgba(0,0,0,.10);
+    max-width: 900px;
+}
+
+.generic-empty-box h3 {
+    margin: 0 0 12px;
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.generic-empty-box p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.caso-tab-panel {
+    display: none;
+}
+
+.caso-tab-panel.active {
+    display: block;
+}
+
+.caso-nav-btn {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+@media (max-width: 1100px) {
+    .generic-card-grid-4,
+    .colectivos-grid,
+    .news-list-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .generic-card-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .generic-section,
+    .legal-section {
+        padding: 54px 0 70px;
+    }
+
+    .generic-card-grid-3,
+    .generic-card-grid-4,
+    .colectivos-grid,
+    .news-list-grid,
+    .socio-price-container {
+        grid-template-columns: 1fr;
+    }
+
+    .generic-card,
+    .article-content {
+        padding: 30px 24px;
+    }
+
+    .socio-price-card {
+        max-width: 260px;
+    }
+}
+
+/* ==========================================================
+   AJUSTE FINAL - ESTILOS PÁGINAS COMPLETADAS
+   Medios, socios, legales, actualidad, noticias, colectivos
+========================================================== */
+
+/* Heroes interiores genéricos */
+.inner-hero-simple {
+    min-height: 360px;
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.88), rgba(41, 79, 77, 0.88)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.inner-hero-simple .inner-hero-overlay {
+    min-height: 360px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.inner-hero-simple .inner-hero-content {
+    max-width: 1180px;
+}
+
+.inner-hero-simple h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 46px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.inner-hero-simple p {
+    max-width: 1120px;
+    margin: 0;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 1.55;
+    font-weight: 700;
+}
+
+.inner-hero-simple .btn-purple {
+    margin-top: 32px;
+}
+
+.inner-hero-actualidad {
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.78), rgba(41, 79, 77, 0.78)),
+        url('/assets/adicae/HERO-ACTUALIDAD-ADICAE.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Secciones genéricas */
+.generic-section,
+.legal-section {
+    padding: 78px 0 92px;
+}
+
+.generic-section {
+    background: #ffffff;
+}
+
+.generic-section-gray,
+.legal-section {
+    background: #f7f7f7;
+}
+
+.generic-container {
+    max-width: 1320px;
+}
+
+.generic-container.narrow,
+.legal-container {
+    max-width: 1120px;
+}
+
+.generic-section h2,
+.legal-section h2,
+.article-content h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+}
+
+.generic-section h3,
+.legal-section h3,
+.article-content h3 {
+    margin: 34px 0 14px;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.generic-section p,
+.legal-section p,
+.article-content p,
+.generic-intro {
+    margin: 0 0 22px;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.generic-intro {
+    max-width: 1120px;
+    margin-bottom: 36px;
+}
+
+.generic-section a:not(.btn-purple):not(.btn-outline):not(.case-btn):not(.caso-small-btn),
+.legal-section a,
+.article-content a:not(.btn-purple):not(.btn-outline) {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.generic-section a:not(.btn-purple):not(.btn-outline):not(.case-btn):not(.caso-small-btn):hover,
+.legal-section a:hover,
+.article-content a:not(.btn-purple):not(.btn-outline):hover {
+    color: var(--purple-dark);
+    text-decoration: underline;
+}
+
+/* Tarjetas genéricas */
+.generic-card-grid {
+    display: grid;
+    gap: 24px;
+    margin-top: 34px;
+}
+
+.generic-card-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.generic-card-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.generic-card {
+    background: #ffffff;
+    padding: 34px 30px;
+    min-height: 220px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+    color: var(--dark);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.generic-card h3 {
+    margin: 0 0 18px;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.generic-card p {
+    margin: 0 0 22px;
+    font-size: 16.5px;
+    line-height: 1.65;
+}
+
+.generic-card .btn-outline,
+.generic-card .case-btn {
+    margin-top: auto;
+}
+
+.generic-icon {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: rgba(147, 0, 124, 0.08);
+    color: var(--purple);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+}
+
+.benefits-grid .generic-card {
+    min-height: 255px;
+}
+
+.benefits-grid .generic-card p {
+    font-weight: 600;
+}
+
+/* Medios de comunicación */
+.media-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.media-socials a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--purple);
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.media-socials a:hover {
+    background: var(--purple-dark);
+    transform: translateY(-2px);
+    text-decoration: none !important;
+}
+
+/* Listados de colectivos */
+.colectivos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 38px;
+}
+
+.colectivo-card {
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.colectivo-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.colectivo-card:hover img {
+    transform: scale(1.04);
+}
+
+.colectivo-card-content {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.colectivo-card-content h3 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 23px;
+    line-height: 1.22;
+    font-weight: 800;
+}
+
+.colectivo-card-content p {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.colectivo-card-content .case-btn {
+    margin-top: auto;
+}
+
+/* Noticias / actualidad */
+.news-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+}
+
+.news-list-card {
+    background: #ffffff;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+    padding: 30px 28px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-top: 5px solid var(--purple);
+}
+
+.news-list-card span,
+.article-date {
+    display: block;
+    margin-bottom: 16px;
+    color: #8d8d8d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.news-list-card h3 {
+    margin: 0 0 18px;
+    color: var(--dark);
+    font-size: 21px;
+    line-height: 1.3;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.news-list-card p {
+    margin: 0 0 22px;
+    color: #606060;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.news-list-card a {
+    margin-top: auto;
+    color: var(--dark) !important;
+    font-weight: 800;
+}
+
+.news-list-card a:hover {
+    color: var(--purple) !important;
+}
+
+/* Páginas legales */
+.legal-section .legal-container {
+    background: #ffffff;
+    padding: 46px 52px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+}
+
+.legal-section h2 + p,
+.legal-section p:first-of-type {
+    margin-top: 0;
+}
+
+.legal-section ul,
+.legal-section ol,
+.article-content ul,
+.article-content ol {
+    margin: 0 0 28px 22px;
+    padding: 0;
+}
+
+.legal-section li,
+.article-content li {
+    margin-bottom: 12px;
+    color: var(--dark);
+    font-size: 16.5px;
+    line-height: 1.7;
+}
+
+.legal-section strong,
+.article-content strong {
+    font-weight: 800;
+}
+
+/* Noticia individual */
+.article-content {
+    background: #ffffff;
+    padding: 48px 54px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+}
+
+.article-content p:last-child {
+    margin-bottom: 0;
+}
+
+.article-date {
+    color: var(--purple);
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.article-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 34px;
+}
+
+/* Hágase socio */
+.socio-price-section {
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.92), rgba(41, 79, 77, 0.92)),
+        url('/assets/adicae/fondo-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 72px 0;
+}
+
+.socio-price-container {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 55px;
+    align-items: center;
+}
+
+.socio-price-container h2,
+.socio-price-container p {
+    color: #ffffff;
+}
+
+.socio-price-container h2 {
+    margin: 0;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.22);
+}
+
+.socio-price-container p {
+    max-width: 850px;
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.socio-price-card {
+    background: #ffffff;
+    color: var(--dark);
+    padding: 34px 28px;
+    text-align: center;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.18);
+}
+
+.socio-price-card strong {
+    display: block;
+    color: var(--purple);
+    font-size: 78px;
+    line-height: 0.95;
+    font-weight: 900;
+}
+
+.socio-price-card span {
+    display: block;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.socio-price-card p {
+    margin: 12px 0 0;
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.socio-form-card {
+    max-width: 980px;
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Caja vacía reutilizable */
+.generic-empty-box {
+    background: #ffffff;
+    padding: 34px 36px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.10);
+    max-width: 900px;
+}
+
+.generic-empty-box h3 {
+    margin: 0 0 12px;
+    color: var(--dark);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.generic-empty-box p {
+    margin: 0;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+
+
+/* ==========================================================
+   PASE VISUAL 2 - AJUSTE DE REPLICA ADICAE ORIGINAL
+   Revisión página a página: medios, socios, colectivos, legales y casos
+========================================================== */
+
+/* Hero base de páginas Elementor originales */
+.inner-hero-simple,
+.caso-hero {
+    min-height: 360px;
+    background-color: #294f4d;
+}
+
+.inner-hero-simple .inner-hero-overlay {
+    min-height: 360px;
+    background: rgba(41, 79, 77, 0.88);
+}
+
+.inner-hero-simple h1,
+.caso-hero h1,
+.derechos-hero h1 {
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.inner-hero-simple .section-line,
+.caso-line-yellow,
+.derechos-hero-line {
+    background: #ffbd00;
+}
+
+.inner-hero-simple p,
+.caso-hero h2,
+.derechos-hero h2 {
+    font-weight: 800;
+}
+
+/* Medios de comunicación: réplica de estructura original */
+.media-page-section {
+    background: #f7f7f7;
+    padding: 74px 0 88px;
+}
+
+.media-page-container {
+    max-width: 1320px;
+}
+
+.media-page-intro {
+    max-width: 1220px;
+    margin-bottom: 58px;
+}
+
+.media-page-intro p,
+.media-page-heading p {
+    margin: 0 0 20px;
+    color: #10233f;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.media-page-heading {
+    max-width: 1220px;
+    margin-bottom: 34px;
+}
+
+.media-page-heading h2 {
+    margin: 0;
+    color: #10233f;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.media-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    align-items: stretch;
+}
+
+.media-card {
+    background: #fff;
+    padding: 38px 36px;
+    min-height: 360px;
+    box-shadow: 0 6px 22px rgba(0,0,0,.11);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.media-card h3 {
+    margin: 0;
+    color: #10233f;
+    font-size: 24px;
+    line-height: 1.22;
+    font-weight: 800;
+}
+
+.media-card .section-line {
+    width: 34px;
+    height: 5px;
+    margin: 22px 0;
+}
+
+.media-card p,
+.media-contact-list li {
+    color: #10233f;
+    font-size: 16.5px;
+    line-height: 1.65;
+}
+
+.media-card p {
+    margin: 0 0 24px;
+}
+
+.media-card .btn-outline {
+    margin-top: auto;
+}
+
+.media-contact-list {
+    list-style: none;
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+.media-contact-list li {
+    margin-bottom: 10px;
+}
+
+/* Página índice de colectivos */
+.colectivos-index-hero {
+    background-image:
+        linear-gradient(rgba(41, 79, 77, 0.78), rgba(41, 79, 77, 0.78)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.colectivos-hero-btn {
+    margin-top: 32px;
+    text-transform: uppercase;
+}
+
+.colectivos-intro-section {
+    background: #fff;
+    padding: 74px 0 54px;
+}
+
+.colectivos-intro-container {
+    max-width: 1320px;
+}
+
+.colectivos-intro-container h2 {
+    margin: 0;
+    color: #10233f;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.colectivos-intro-container p {
+    max-width: 1280px;
+    margin: 0;
+    color: #10233f;
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.colectivos-index-section {
+    padding-top: 58px;
+}
+
+.colectivos-grid-index {
+    margin-top: 42px;
+}
+
+.colectivo-card {
+    min-height: 100%;
+}
+
+.colectivo-card-image-link {
+    display: block;
+    overflow: hidden;
+}
+
+.colectivos-contact-section {
+    padding-top: 76px;
+}
+
+/* Casos colectivos: evitar aspecto de página genérica */
+.caso-nav-section {
+    background: #f6f6f6;
+    padding: 66px 0 44px;
+}
+
+.caso-info-section,
+.caso-news-section,
+.caso-convocatorias-section,
+.caso-faq-section {
+    background: #f6f6f6;
+}
+
+.caso-documentos-section {
+    background: #f6f6f6;
+}
+
+.caso-news-card,
+.caso-opcion-card,
+.caso-form-card,
+.generic-empty-box,
+.caso-documentos-list a {
+    box-shadow: 0 0 18px rgba(0,0,0,.13);
+}
+
+.caso-news-card {
+    border: 0;
+}
+
+.caso-documentos-list a {
+    background: #fff;
+    border: 0;
+}
+
+.caso-documentos-list a:hover {
+    background: #f7eef5;
+}
+
+.caso-claim-section {
+    background: #f6f6f6;
+    padding: 75px 0 70px;
+}
+
+.caso-tab-panel > .caso-claim-section {
+    padding-top: 80px;
+}
+
+/* ==========================================================
+   PÁGINA ACTUALIDAD
+========================================================== */
+
+.inner-hero-actualidad {
+    background-image:
+        linear-gradient(rgba(36, 69, 66, 0.78), rgba(36, 69, 66, 0.78)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.actualidad-container {
+    max-width: 1320px;
+}
+
+.actualidad-intro-section {
+    background: #f7f7f7;
+    padding: 78px 0 42px;
+}
+
+.actualidad-intro-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.actualidad-intro-text h2,
+.actualidad-cta-box h2 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.actualidad-intro-text p {
+    margin: 0 0 22px;
+    color: var(--dark);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.actualidad-intro-box {
+    background: #fff;
+    padding: 42px 40px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+.actualidad-intro-box h3 {
+    margin: 0 0 22px;
+    color: var(--dark);
+    font-size: 25px;
+    line-height: 1.25;
+    font-weight: 800;
+}
+
+.actualidad-intro-box p {
+    margin: 0 0 28px;
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.actualidad-intro-box a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 2px solid var(--purple);
+    border-radius: var(--radius);
+    color: var(--dark);
+    font-weight: 800;
+    transition: all 0.2s ease;
+}
+
+.actualidad-intro-box a:hover {
+    background: var(--purple);
+    color: #fff;
+}
+
+.actualidad-filter-section {
+    background: #f7f7f7;
+    padding: 10px 0 54px;
+}
+
+.actualidad-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.actualidad-filter {
+    min-height: 42px;
+    padding: 0 22px;
+    border: 2px solid var(--purple);
+    border-radius: var(--radius);
+    background: #fff;
+    color: var(--dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+}
+
+.actualidad-filter:hover,
+.actualidad-filter.active {
+    background: var(--purple);
+    color: #fff;
+}
+
+.actualidad-news-section {
+    background: #f7f7f7;
+    padding: 0 0 92px;
+}
+
+.actualidad-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.actualidad-card {
+    background: #fff;
+    min-height: 100%;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+}
+
+.actualidad-card-img {
+    display: block;
+    height: 245px;
+    overflow: hidden;
+    background: #e7e7e7;
+}
+
+.actualidad-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+}
+
+.actualidad-card:hover .actualidad-card-img img {
+    transform: scale(1.04);
+}
+
+.actualidad-card-content {
+    padding: 28px 28px 34px;
+    flex: 1;
+}
+
+.actualidad-card-category {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--purple);
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.actualidad-card h3 {
+    margin: 0 0 22px;
+    color: var(--dark);
+    font-size: 20px;
+    line-height: 1.28;
+    font-weight: 800;
+}
+
+.actualidad-card h3 a:hover {
+    color: var(--purple);
+}
+
+.actualidad-card p {
+    margin: 0 0 26px;
+    color: #606774;
+    font-size: 15.5px;
+    line-height: 1.6;
+}
+
+.actualidad-read-more {
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.actualidad-read-more:hover {
+    color: var(--purple);
+}
+
+.actualidad-card-date {
+    border-top: 1px solid #dedede;
+    padding: 17px 28px;
+    color: #9a9a9a;
+    font-size: 14px;
+}
+
+.actualidad-cta-section {
+    background:
+        linear-gradient(rgba(36, 69, 66, 0.88), rgba(36, 69, 66, 0.88)),
+        url('/assets/adicae/fondo-footer.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 78px 0;
+}
+
+.actualidad-cta-box {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 50px;
+    align-items: center;
+    color: #fff;
+}
+
+.actualidad-cta-box h2,
+.actualidad-cta-box p {
+    color: #fff;
+}
+
+.actualidad-cta-box p {
+    max-width: 900px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+@media (max-width: 1100px) {
+    .actualidad-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .actualidad-news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .actualidad-cta-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .actualidad-intro-section {
+        padding: 54px 0 34px;
+    }
+
+    .actualidad-intro-text h2,
+    .actualidad-cta-box h2 {
+        font-size: 27px;
+    }
+
+    .actualidad-intro-box {
+        padding: 32px 26px;
+    }
+
+    .actualidad-filter {
+        width: 100%;
+    }
+
+    .actualidad-news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .actualidad-card-img {
+        height: 220px;
+    }
+}
+
+/* Responsive específico para páginas añadidas */
+@media (max-width: 1100px) {
+    .generic-card-grid-4,
+    .colectivos-grid,
+    .news-list-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .generic-card-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .socio-price-container {
+        grid-template-columns: 1fr;
+    }
+
+    .socio-price-card {
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 700px) {
+    .inner-hero-simple,
+    .inner-hero-simple .inner-hero-overlay {
+        min-height: 350px;
+    }
+
+    .inner-hero-simple h1 {
+        font-size: 34px;
+    }
+
+    .inner-hero-simple p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .generic-section,
+    .legal-section {
+        padding: 54px 0 70px;
+    }
+
+    .generic-section h2,
+    .legal-section h2,
+    .article-content h2,
+    .socio-price-container h2 {
+        font-size: 27px;
+    }
+
+    .generic-card-grid-3,
+    .generic-card-grid-4,
+    .colectivos-grid,
+    .news-list-grid,
+    .socio-price-container {
+        grid-template-columns: 1fr;
+    }
+
+    .generic-card,
+    .article-content,
+    .legal-section .legal-container,
+    .generic-empty-box {
+        padding: 30px 24px;
+    }
+
+    .colectivo-card img {
+        height: 190px;
+    }
+
+    .colectivo-card-content,
+    .news-list-card {
+        padding: 26px 24px;
+    }
+
+    .socio-price-card {
+        max-width: 260px;
+    }
+}
+
+/* Hágase socio: beneficios más cercanos al original */
+.benefits-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.benefits-grid .generic-card {
+    min-height: 215px;
+    padding: 34px 28px 30px;
+}
+
+.benefits-grid .generic-icon {
+    background: #93007c;
+    color: #fff;
+}
+
+.socio-price-section .section-line.yellow {
+    background: #ffbd00;
+}
+
+.socio-price-card {
+    border-top: 6px solid #93007c;
+}
+
+.socio-form-card {
+    max-width: 760px;
+}
+
+/* Legales: bloques blancos como Elementor */
+.legal-section .legal-container,
+.article-content {
+    border-top: 0;
+}
+
+.legal-section h2:not(:first-child) {
+    margin-top: 34px;
+}
+
+/* Conozca sus derechos: ajuste exactitud */
+.derechos-plataforma {
+    background:
+        linear-gradient(rgba(255,255,255,.82), rgba(255,255,255,.82)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.derechos-glosario {
+    background:
+        linear-gradient(rgba(41, 79, 77, 0.90), rgba(41, 79, 77, 0.90)),
+        url('/assets/adicae/ADICAE-banner-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 1100px) {
+    .media-card-grid,
+    .benefits-grid,
+    .colectivos-grid-index {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .media-page-section,
+    .colectivos-intro-section {
+        padding: 54px 0 66px;
+    }
+
+    .media-card-grid,
+    .benefits-grid,
+    .colectivos-grid-index {
+        grid-template-columns: 1fr;
+    }
+
+    .media-card {
+        padding: 30px 24px;
+        min-height: auto;
+    }
+
+    .colectivos-intro-container h2,
+    .media-page-heading h2 {
+        font-size: 27px;
+    }
+
+    .colectivos-hero-btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================================
+   PASE VISUAL 3 - PÁGINA LA ASOCIACIÓN
+========================================================== */
+
+.association-hero {
+    position: relative;
+    min-height: 440px;
+    background-image: url('/assets/adicae/ADICAE-banner-historia.jpg');
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+}
+
+.association-hero-overlay {
+    min-height: 440px;
+    display: flex;
+    align-items: center;
+    background: rgba(38, 73, 70, 0.82);
+}
+
+.association-hero-container {
+    max-width: 1320px;
+}
+
+.association-hero-content {
+    max-width: 1240px;
+}
+
+.association-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.association-hero p {
+    max-width: 1260px;
+    margin: 0;
+    color: #fff;
+    font-size: 21px;
+    line-height: 1.55;
+    font-weight: 800;
+    text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.18);
+}
+
+.association-hero-btn {
+    margin-top: 55px;
+    min-height: 48px;
+    padding: 0 28px;
+    text-transform: uppercase;
+}
+
+.association-content-section {
+    background: #f7f7f7;
+    padding: 78px 0 86px;
+}
+
+.association-content-container {
+    max-width: 1320px;
+}
+
+.association-feature-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 500px;
+    gap: 78px;
+    align-items: start;
+    margin: 92px 0 82px;
+}
+
+.association-feature-row-first {
+    margin-top: 0;
+}
+
+.association-feature-row-final {
+    margin-bottom: 0;
+}
+
+.association-quote-box {
+    border-left: 6px solid var(--purple);
+    padding: 0 0 0 34px;
+    color: var(--dark-blue);
+}
+
+.association-quote-box p {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 22px;
+    line-height: 1.42;
+    font-weight: 800;
+}
+
+.association-quote-box p + p {
+    margin-top: 42px;
+}
+
+.association-quote-box-large p {
+    font-size: 23px;
+    line-height: 1.45;
+}
+
+.association-text-block {
+    margin: 56px 0 70px;
+}
+
+.association-text-block p {
+    margin: 0 0 26px;
+    color: var(--dark-blue);
+    font-size: 16.5px;
+    line-height: 1.72;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.association-text-block p:last-child {
+    margin-bottom: 0;
+}
+
+.association-text-block-last {
+    margin-bottom: 76px;
+}
+
+.association-figure {
+    margin: 0;
+    text-align: center;
+}
+
+.association-figure img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.association-figure-wide img {
+    max-width: 540px;
+}
+
+.association-figure figcaption {
+    margin-top: 18px;
+    color: var(--dark-blue);
+    font-size: 15px;
+    line-height: 1.45;
+    font-weight: 400;
+}
+
+.association-related-section {
+    position: relative;
+    background-image: url('/assets/adicae/ADICAE-tambien-le-puede-interesar.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.association-related-overlay {
+    background: rgba(38, 73, 70, 0.88);
+    padding: 76px 0 84px;
+}
+
+.association-related-container {
+    max-width: 1320px;
+}
+
+.association-related-section h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+    text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.25);
+}
+
+.association-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 22px;
+}
+
+.association-related-card {
+    min-height: 195px;
+    background: #fff;
+    color: var(--dark-blue);
+    padding: 36px 38px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.14);
+}
+
+.association-related-card h3 {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.association-related-card .section-line {
+    width: 32px;
+    height: 4px;
+    margin: 22px 0;
+}
+
+.association-related-card .btn-outline {
+    min-height: 48px;
+    padding: 0 24px;
+    font-size: 15px;
+}
+
+.association-cases-section {
+    background: #f7f7f7;
+    padding: 72px 0 88px;
+    overflow: hidden;
+}
+
+.association-cases-container {
+    max-width: 1320px;
+}
+
+.association-cases-header h2 {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 31px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.association-cases-header .section-line {
+    width: 34px;
+    height: 5px;
+    margin: 24px 0 22px;
+}
+
+.association-cases-carousel-wrap {
+    position: relative;
+    margin-top: 18px;
+    padding: 0 70px 20px;
+}
+
+.association-cases-swiper {
+    overflow: hidden;
+    padding-bottom: 58px;
+}
+
+.association-cases-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.association-case-card {
+    width: 100%;
+    min-height: 530px;
+    background: #fff;
+    color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.association-case-img {
+    display: block;
+    overflow: hidden;
+}
+
+.association-case-img img {
+    width: 100%;
+    height: 255px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.association-case-card:hover .association-case-img img {
+    transform: scale(1.035);
+}
+
+.association-case-content {
+    padding: 30px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.association-case-content h3 {
+    margin: 0;
+    color: var(--dark-blue);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.association-case-content p {
+    margin: 0 0 26px;
+    color: var(--dark-blue);
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.association-case-content .case-btn {
+    margin-top: auto;
+    min-height: 48px;
+}
+
+.association-cases-prev,
+.association-cases-next {
+    width: 46px;
+    height: 46px;
+    color: var(--dark-blue) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.association-cases-prev {
+    left: 0;
+}
+
+.association-cases-next {
+    right: 0;
+}
+
+.association-cases-prev::after,
+.association-cases-next::after {
+    color: var(--dark-blue) !important;
+    font-size: 34px;
+    font-weight: 900;
+}
+
+.association-cases-swiper .swiper-pagination {
+    bottom: 6px;
+}
+
+.association-cases-swiper .swiper-pagination-bullet {
+    width: 13px;
+    height: 13px;
+    background: rgba(147, 0, 124, 0.26);
+    opacity: 1;
+}
+
+.association-cases-swiper .swiper-pagination-bullet-active {
+    background: var(--purple);
+}
+
+@media (max-width: 1100px) {
+    .association-feature-row {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        margin: 72px 0;
+    }
+
+    .association-figure {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .association-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .association-cases-carousel-wrap {
+        padding: 0 52px 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .association-hero,
+    .association-hero-overlay {
+        min-height: 430px;
+    }
+
+    .association-hero h1 {
+        font-size: 34px;
+    }
+
+    .association-hero p {
+        font-size: 16px;
+        line-height: 1.55;
+    }
+
+    .association-hero-btn {
+        width: 100%;
+        margin-top: 34px;
+    }
+
+    .association-content-section {
+        padding: 54px 0 62px;
+    }
+
+    .association-feature-row {
+        margin: 50px 0;
+    }
+
+    .association-quote-box {
+        padding-left: 22px;
+        border-left-width: 5px;
+    }
+
+    .association-quote-box p,
+    .association-quote-box-large p {
+        font-size: 19px;
+        line-height: 1.48;
+    }
+
+    .association-text-block {
+        margin: 42px 0 48px;
+    }
+
+    .association-text-block p {
+        font-size: 15.5px;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .association-related-overlay {
+        padding: 54px 0 64px;
+    }
+
+    .association-related-section h2,
+    .association-cases-header h2 {
+        font-size: 27px;
+    }
+
+    .association-related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .association-related-card {
+        min-height: auto;
+        padding: 30px 26px;
+    }
+
+    .association-cases-section {
+        padding: 54px 0 68px;
+    }
+
+    .association-cases-carousel-wrap {
+        padding: 0 42px 20px;
+    }
+
+    .association-case-img img {
+        height: 220px;
+    }
+
+    .association-case-card {
+        min-height: 500px;
+    }
+}
